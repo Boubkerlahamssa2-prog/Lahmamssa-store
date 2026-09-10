@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>التجارة الإلكترونية - دليلك الكامل</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #f4f7fc;
+            color: #1a2634;
+            line-height: 1.7;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: linear-gradient(135deg, #0d47a1, #1565c0, #1976d2);
+            color: #fff;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(13, 71, 161, 0.35);
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* ===== SECTION TITLES ===== */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0d47a1;
+            margin-bottom: 1.5rem;
+            border-right: 5px solid #1976d2;
+            padding-right: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .section-title span {
+            font-size: 1.8rem;
+        }
+
+        /* ===== CARDS GRID ===== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+        }
+
+        .card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0d47a1;
+            margin-bottom: 0.4rem;
+        }
+
+        .card p {
+            font-size: 0.98rem;
+            color: #444;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.2rem 1.6rem;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a2634;
+            text-align: right;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            transition: background 0.15s;
+        }
+
+        .faq-question:hover {
+            background: #f0f4ff;
+        }
+
+        .faq-question .arrow {
+            font-size: 1rem;
+            transition: transform 0.25s;
+            color: #1976d2;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-question .arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.3s ease;
+            padding: 0 1.6rem;
+            color: #444;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 400px;
+            padding: 0 1.6rem 1.4rem 1.6rem;
+        }
+
+        /* ===== STATS ===== */
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            background: linear-gradient(135deg, #0d47a1, #1565c0);
+            border-radius: 18px;
+            padding: 2rem 1.5rem;
+            color: #fff;
+            margin-bottom: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 130px;
+        }
+
+        .stat-item .number {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .stat-item .label {
+            font-size: 0.95rem;
+            opacity: 0.85;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0d1b2a;
+            color: #b0bec5;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            font-size: 0.9rem;
+            border-top: 3px solid #1976d2;
+        }
+
+        footer a {
+            color: #64b5f6;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.9rem; }
+            .section-title { font-size: 1.5rem; }
+            .faq-question { font-size: 1rem; padding: 1rem 1.2rem; }
+            .faq-answer { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <h1>🛒 التجارة الإلكترونية</h1>
+    <p>دليلك الشامل لبدء مشروعك على الإنترنت — من الفكرة إلى الربح</p>
+</header>
+
+<div class="container">
+
+    <!-- ===== WHAT IS E-COMMERCE ===== -->
+    <h2 class="section-title"><span>📖</span> شنو هي التجارة الإلكترونية؟</h2>
+    <p style="font-size:1.1rem; margin-bottom:2rem;">
+        التجارة الإلكترونية <strong>(E-commerce)</strong> هي شراء وبيع المنتجات والخدمات عبر الإنترنت.
+        بدل ما تحتاج محل فعلي، كتخدم على موقع أو تطبيق، والزبون يطلب من دارو.
+        هاد النوع ديال التجارة ولا هو الأسرع نمو فالعالم، ويمكن لأي واحد باش يبدا.
+    </p>
+
+    <!-- ===== WHY CARDS ===== -->
+    <h2 class="section-title"><span>⚡</span> علاش تختار التجارة الإلكترونية؟</h2>
+    <div class="cards-grid">
+        <div class="card">
+            <div class="icon">🌍</div>
+            <h3>وصول عالمي</h3>
+            <p>تستهدف زبائن من جميع أنحاء العالم، 24 ساعة على 24.</p>
+        </div>
+        <div class="card">
+            <div class="icon">💰</div>
+            <h3>تكاليف أقل</h3>
+            <p>ما عندكش كراء محل، لا كهرباء، لا مصاريف إضافية كبيرة.</p>
+        </div>
+        <div class="card">
+            <div class="icon">📊</div>
+            <h3>تحليل دقيق</h3>
+            <p>تعرف شنو كتشري الزبائن ومتى، وتحسن عروضك على أساس البيانات.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🚀</div>
+            <h3>قابلية النمو</h3>
+            <p>توسع أعمالك بسرعة بدون ما تضطر تفتح فروع جديدة.</p>
+        </div>
+    </div>
+
+    <!-- ===== STATS ===== -->
+    <div class="stats">
+        <div class="stat-item">
+            <div class="number">2.7+</div>
+            <div class="label">مليار مشتري حول العالم</div>
+        </div>
+        <div class="stat-item">
+            <div class="number">$6.3</div>
+            <div class="label">تريليون دولار مبيعات 2024</div>
+        </div>
+        <div class="stat-item">
+            <div class="number">+20%</div>
+            <div class="label">نمو سنوي مستمر</div>
+        </div>
+    </div>
+
+    <!-- ===== FAQ ===== -->
+    <h2 class="section-title"><span>❓</span> الأسئلة الأكثر شيوعًا (FAQ)</h2>
+    <div class="faq-list">
+
+        <div class="faq-item active">
+            <button class="faq-question">
+                شنو هي أول خطوة باش نبدا فالتجارة الإلكترونية؟
+                <span class="arrow">▲</span>
+            </button>
+            <div class="faq-answer">
+                أول حاجة لازم تحدد <strong>المجال أو المنتج</strong> اللي غادي تبيع. بعدها تختار منصة (مثلاً Shopify، WooCommerce، أو متجر يدوي). بعد ذلك جهز المنتجات، وصورها، وحدد الأسعار، وانطلق.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                واش محتاج رأس مال كبير باش نبدا؟
+                <span class="arrow">▲</span>
+            </button>
+            <div class="faq-answer">
+                لا، تقدر تبدأ بـ <strong>دروب شيبينغ (Dropshipping)</strong> أو <strong>المنتجات الرقمية</strong> اللي ما تحتاجش مخزون. كتالا باش تبيع منتجات الغير وتأخذ هامش ربح. حتى 100$ قد تكون كافية للانطلاقة.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                 كيفاش نختار المنتج المناسب للبيع؟
+                <span class="arrow">▲</span>
+            </button>
+            <div class="faq-answer">
+                اختار منتج:
+                <ul style="margin-top:0.3rem; padding-right:1.2rem;">
+                    <li>عندو طلب مستمر (مثل إكسسوارات، منتجات رقمية، ملابس).</li>
+                    <li>ما عندوش منافسة شرسة بزاف.</li>
+                    <li>تقدر تزيد فيه قيمة (تعبئة، شرح، ضمان).</li>
+                    <li>استعمل أدوات مثل <strong>Google Trends</strong> و <strong>TikTok Ads</strong> لتحليل الطلب.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                شنو الفرق بين Shopify و WooCommerce؟
+                <span class="arrow">▲</span>
+            </button>
+            <div class="faq-answer">
+                <strong>Shopify</strong>: منصة مدفوعة شهرية، سهلة باش تخدم، الاستضافة والدفع مضمونين.<br/>
+                <strong>WooCommerce</strong>: إضافة مجانية على ووردبريس، تحكم كامل، كتحتاج استضافة وسيرفر، مناسب للميزانيات الصغيرة فالدومين.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                كيفاش نجيب الزبائن للمتجر ديالي؟
+                <span class="arrow">▲</span>
+            </button>
+            <div class="faq-answer">
+                فيه عدة طرق:
+                <ul style="margin-top:0.3rem; padding-right:1.2rem;">
+                    <li><strong>SEO</strong>: تحسين محركات البحث باش يظهر متجرك فغوغل.</li>
+                    <li><strong>إعلانات</strong>: فيسبوك، إنستغرام، تيك توك — تستهدف الزبائن بدقة.</li>
+                    <li><strong>التسويق بالمحتوى</strong>: مقالات، فيديوهات، نصائح تخص مجالك.</li>
+                    <li><strong>البريد الإلكتروني</strong>: ابني قائمة بريدية وقدم عروض حصرية.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                واش طرق الدفع الآمنة شنو هي؟
+                <span class="arrow">▲</span>
+            </button>
+            <div class="faq-answer">
+                من بين أشهر بوابات الدفع: <strong>PayPal</strong>، <strong>Stripe</strong>، <strong>PayTabs</strong>، <strong>2Checkout</strong>، و <strong>الدفع عند الاستلام</strong> (Cash on Delivery) اللي كتحتاجو الدول العربية بزاف. تأكد أن موقعك يستخدم HTTPS وشهادات SSL.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                كيفاش نتعامل مع الشحن والتوصيل؟
+                <span class="arrow">▲</span>
+            </button>
+            <div class="faq-answer">
+                تقدر تستعمل خدمات مثل <strong>DHL</strong>، <strong>Aramex</strong>، أو شركات محلية. إذا كنت فدروب شيبينغ، المورد هو المسؤول على الشحن. قدم دائماً <strong>رقم تتبع</strong> للطلب وحدد مدة التوصيل بوضوح.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                واش محتاج ترخيص أو سجل تجاري؟
+                <span class="arrow">▲</span>
+            </button>
+            <div class="faq-answer">
+                هاد الشي كيعتمد على بلدك وحجم مشروعك. فمعظم الدول، إذا كنت تبيع رسمياً محتاج <strong>سجل تجاري</strong> أو بطاقة مهنية. لكن فدروب شيبينغ أو المشاريع الصغيرة جداً، ممكن تبدا بشكل غير رسمي على منصات مثل Etsy أو Instagram.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                شنو هي أكبر غلطات المبتدئين فالتجارة الإلكترونية؟
+                <span class="arrow">▲</span>
+            </button>
+            <div class="faq-answer">
+                <ol style="margin-top:0.3rem; padding-right:1.2rem;">
+                    <li>اختيار منتجات بدون دراسة السوق.</li>
+                    <li>إهمال تصميم المتجر وتجربة المستخدم.</li>
+                    <li>عدم تحديد ميزانية إعلانات واضحة.</li>
+                    <li>الاعتماد على مصدر واحد للزبائن.</li>
+                    <li>تجاهل خدمة العملاء و الردود.</li>
+                </ol>
+                تعلم من أخطائك بسرعة، وطور نفسك باستمرار.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                واش يمكن نبدا التجارة الإلكترونية وأنا عندي شغل آخر؟
+                <span class="arrow">▲</span>
+            </button>
+            <div class="faq-answer">
+                أكيد! التجارة الإلكترونية كتسمح ليك تشتغل <strong>بدوام جزئي</strong>. تقدر تخصص ساعتين فاليوم لإدارة المتجر والرد على الزبائن. دروب شيبينغ كيسهل هاد الشي بزاف، حيت ما عندكش مشكل التخزين والشحن. المهم التنظيم والاستمرارية.
+            </div>
+        </div>
+
+    </div><!-- /faq-list -->
+
+    <!-- ===== TIPS ===== -->
+    <h2 class="section-title"><span>💡</span> نصائح ذهبية للانطلاقة</h2>
+    <div class="cards-grid">
+        <div class="card">
+            <div class="icon">🎯</div>
+            <h3>ابدأ صغير</h3>
+            <p>لا تحاول تبيع كلشي دفعة وحدة. ركز على niche واحد ودوي عليه.</p>
+        </div>
+        <div class="card">
+            <div class="icon">📸</div>
+            <h3>صورة إحترافية</h3>
+            <p>التصوير والوصف هو اللي كيبيع. استثمر فصور واضحة وجذابة.</p>
+        </div>
+        <div class="card">
+            <div class="icon">💬</div>
+            <h3>خدمة الزبائن</h3>
+            <p>رد بسرعة، كن صادق، وحل المشاكل قبل ما تكبر. السمعة هي كلشي.</p>
+        </div>
+        <div class="card">
+            <div class="icon">📈</div>
+            <h3>حلل وطور</h3>
+            <p>استعمل Google Analytics باش تفهم سلوك الزبائن وحسن متجرك باستمرار.</p>
+        </div>
+    </div>
+
+</div><!-- /container -->
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>© 2025 — التجارة الإلكترونية للجميع | صمم ب ❤️ لمساعدتك على الانطلاق</p>
+</footer>
+
+<!-- ===== JS for FAQ Accordion ===== -->
+<script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const item = this.parentElement;
+            item.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>
